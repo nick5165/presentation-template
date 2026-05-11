@@ -1,4 +1,4 @@
-\documentclass[aspectratio=169]{beamer} % Формат 16:9 как на ваших скриншотах
+\documentclass[aspectratio=169]{beamer} % Формат 16:9
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 % Цвет для заголовков таблиц из вашей презентации
 \definecolor{tabgreen}{HTML}{92D050}
 
-%%Исправляем греческие буквы в формулах, они должны быть прямыми, а не курсивными
+%%Исправляем греческие буквы в формулах
 \DeclareSymbolFont{greek}{U}{eur}{m}{n}                                                        
 \SetSymbolFont{greek}{bold}{U}{eur}{b}{n}                                                      
 \DeclareSymbolFontAlphabet{\gr}{greek}                                                         
@@ -60,7 +60,7 @@
     Научный руководитель: & к.т.н. Пожидаев Михаил Сергеевич
   \end{tabular}
 }
-\date{} % Пустая дата, так как на исходном слайде её нет
+\date{} 
 
 \begin{document}
 
@@ -227,4 +227,33 @@
     \rowcolor{tabgreen} \textbf{Конфигурация} & \textbf{Faithfulness} & \textbf{Context recall} & \textbf{Context precision} & \textbf{Answer accuracy} \\ \hline
     Qwen-4b-instruct + BGE-M3 & 0,59 & 0,61 & 0,31 & 0,58 \\ \hline
     gpt-oss-20b + BGE-M3 & 0,76 & 0,63 & 0,30 & 0,60 \\ \hline
-    gpt-oss-20b + BGE-M3 + Reranker & 0,76 & 0,69 & 0,46 &
+    gpt-oss-20b + BGE-M3 + Reranker & 0,76 & 0,69 & 0,46 & 0,75 \\ \hline
+    gpt-oss-20b + BGE-M3 + Reranker + Rewriter & 0,77 & 0,76 & 0,52 & 0,77 \\ \hline
+    Deepseek v3.2 + BGE-M3 + Reranker + Rewriter & 0,87 & 0,75 & 0,54 & 0,75 \\ \hline
+\end{tabular}
+\end{frame}
+
+% --- Слайд 17 ---
+\begin{frame}
+\frametitle{Результаты}
+\small
+\begin{enumerate}
+    \item Проведён теоретический анализ существующих поколений архитектур RAG.
+    \item Адаптирована и локализована методика автоматизированной оценки RAGAS.
+    \item Разработана стратегия специализированной предобработки данных, включающая иерархическую нарезку текста.
+    \item Реализован модуль семантической оптимизации запросов.
+    \item Реализован механизм глобального гибридного поиска.
+    \item Проведён сравнительный анализ эффективности различных LLM.
+    \item Проведено сравнительное тестирование современных моделей векторных представлений.
+    \item Интегрированы механизмы заключительной обработки.
+\end{enumerate}
+\end{frame}
+
+% --- Слайд 18 ---
+\begin{frame}
+\vspace{2cm}
+\centering
+\Huge \textbf{Спасибо за внимание!}
+\end{frame}
+
+\end{document}
