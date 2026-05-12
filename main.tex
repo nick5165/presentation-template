@@ -1,15 +1,19 @@
-\documentclass[aspectratio=169, xcolor=table]{beamer} % ДОБАВЛЕНО xcolor=table для работы \rowcolor
+\documentclass[aspectratio=169, xcolor=table]{beamer} % Формат 16:9 + поддержка цвета в таблицах
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage{lmodern} % ДОБАВЛЕНО для векторных русских шрифтов (уберет ошибку Metafont)
+
+\usepackage{ptsans} % Идеальный векторный шрифт (уберет огромный лог METAFONT)
+\usepackage{amsfonts} % Нужно для корректной работы математических символов
+
 \usepackage{cmap}
 \usepackage{graphicx}
 \usepackage{xspace}
-\usepackage{psfrag}
+% \usepackage{psfrag} % ОТКЛЮЧЕНО: ломает сборку в pdflatex
 \usepackage{hyperref}
 \usepackage[normalem]{ulem}
+
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[frame number]
@@ -18,39 +22,42 @@
 % Цвет для заголовков таблиц из вашей презентации
 \definecolor{tabgreen}{HTML}{92D050}
 
-%%Исправляем греческие буквы в формулах
+%% Исправляем греческие буквы в формулах
 \DeclareSymbolFont{greek}{U}{eur}{m}{n}                                                        
 \SetSymbolFont{greek}{bold}{U}{eur}{b}{n}                                                      
-\DeclareSymbolFontAlphabet{\gr}{greek}                                                         
-\DeclareMathSymbol{\alpha}{\mathord}{greek}{"0B}                                               
-\DeclareMathSymbol{\beta}{\mathord}{greek}{"0C}                                                
-\DeclareMathSymbol{\gamma}{\mathord}{greek}{"0D}                                               
-\DeclareMathSymbol{\delta}{\mathord}{greek}{"0E}                                               
-\DeclareMathSymbol{\epsilon}{\mathord}{greek}{"0F}                                             
-\DeclareMathSymbol{\zeta}{\mathord}{greek}{"10}                                                
-\DeclareMathSymbol{\eta}{\mathord}{greek}{"11}                                                 
-\DeclareMathSymbol{\theta}{\mathord}{greek}{"12}                                               
-\DeclareMathSymbol{\iota}{\mathord}{greek}{"13}                                                
-\DeclareMathSymbol{\kappa}{\mathord}{greek}{"14}                                               
-\DeclareMathSymbol{\lambda}{\mathord}{greek}{"15}                                              
-\DeclareMathSymbol{\mu}{\mathord}{greek}{"16}                                                  
-\DeclareMathSymbol{\nu}{\mathord}{greek}{"17}                                                  
-\DeclareMathSymbol{\xi}{\mathord}{greek}{"18}                                                  
-\DeclareMathSymbol{\pi}{\mathord}{greek}{"19}                                                  
-\DeclareMathSymbol{\rho}{\mathord}{greek}{"1A}                                                 
-\DeclareMathSymbol{\sigma}{\mathord}{greek}{"1B}                                               
-\DeclareMathSymbol{\tau}{\mathord}{greek}{"1C}                                                 
-\DeclareMathSymbol{\upsilon}{\mathord}{greek}{"1D}                                             
-\DeclareMathSymbol{\phi}{\mathord}{greek}{"1E}                                                 
-\DeclareMathSymbol{\chi}{\mathord}{greek}{"1F}                                                 
-\DeclareMathSymbol{\psi}{\mathord}{greek}{"20}                                                 
-\DeclareMathSymbol{\omega}{\mathord}{greek}{"21}                                               
-\DeclareMathSymbol{\varepsilon}{\mathord}{greek}{"22}                                          
-\DeclareMathSymbol{\vartheta}{\mathord}{greek}{"23}                                            
-\DeclareMathSymbol{\varpi}{\mathord}{greek}{"24}                                               
+\DeclareSymbolFontAlphabet{\gr}{greek}  
+
+% ВНИМАНИЕ: Заменены коды с кавычками ("0B) на безопасные десятичные (11),
+% чтобы русский babel не ломал компиляцию при чтении спецсимвола кавычки!
+\DeclareMathSymbol{\alpha}{\mathord}{greek}{11}                                               
+\DeclareMathSymbol{\beta}{\mathord}{greek}{12}                                                
+\DeclareMathSymbol{\gamma}{\mathord}{greek}{13}                                               
+\DeclareMathSymbol{\delta}{\mathord}{greek}{14}                                               
+\DeclareMathSymbol{\epsilon}{\mathord}{greek}{15}                                             
+\DeclareMathSymbol{\zeta}{\mathord}{greek}{16}                                                
+\DeclareMathSymbol{\eta}{\mathord}{greek}{17}                                                 
+\DeclareMathSymbol{\theta}{\mathord}{greek}{18}                                               
+\DeclareMathSymbol{\iota}{\mathord}{greek}{19}                                                
+\DeclareMathSymbol{\kappa}{\mathord}{greek}{20}                                               
+\DeclareMathSymbol{\lambda}{\mathord}{greek}{21}                                              
+\DeclareMathSymbol{\mu}{\mathord}{greek}{22}                                                  
+\DeclareMathSymbol{\nu}{\mathord}{greek}{23}                                                  
+\DeclareMathSymbol{\xi}{\mathord}{greek}{24}                                                  
+\DeclareMathSymbol{\pi}{\mathord}{greek}{25}                                                  
+\DeclareMathSymbol{\rho}{\mathord}{greek}{26}                                                 
+\DeclareMathSymbol{\sigma}{\mathord}{greek}{27}                                               
+\DeclareMathSymbol{\tau}{\mathord}{greek}{28}                                                 
+\DeclareMathSymbol{\upsilon}{\mathord}{greek}{29}                                             
+\DeclareMathSymbol{\phi}{\mathord}{greek}{30}                                                 
+\DeclareMathSymbol{\chi}{\mathord}{greek}{31}                                                 
+\DeclareMathSymbol{\psi}{\mathord}{greek}{32}                                                 
+\DeclareMathSymbol{\omega}{\mathord}{greek}{33}                                               
+\DeclareMathSymbol{\varepsilon}{\mathord}{greek}{34}                                          
+\DeclareMathSymbol{\vartheta}{\mathord}{greek}{35}                                            
+\DeclareMathSymbol{\varpi}{\mathord}{greek}{36}                                               
 \let\varrho\rho                                                                                
 \let\varsigma\sigma                                                                            
-\DeclareMathSymbol{\varphi}{\mathord}{greek}{"27}
+\DeclareMathSymbol{\varphi}{\mathord}{greek}{39}
 
 % Настройка титульного листа
 \title{Создание интеллектуальных ассистентов для инженерных продуктов на примере узкоспециализированных предметных областей}
