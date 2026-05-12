@@ -1,15 +1,15 @@
-\documentclass[aspectratio=169]{beamer} % Формат 16:9
+\documentclass[aspectratio=169, xcolor=table]{beamer} % ДОБАВЛЕНО xcolor=table для работы \rowcolor
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
+\usepackage{lmodern} % ДОБАВЛЕНО для векторных русских шрифтов (уберет ошибку Metafont)
 \usepackage{cmap}
 \usepackage{graphicx}
 \usepackage{xspace}
 \usepackage{psfrag}
 \usepackage{hyperref}
 \usepackage[normalem]{ulem}
-
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[frame number]
