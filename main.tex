@@ -4,60 +4,24 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 
-\usepackage{ptsans} % Идеальный векторный шрифт (уберет огромный лог METAFONT)
-\usepackage{amsfonts} % Нужно для корректной работы математических символов
+\usepackage{paratype} % Идеально: заменяет и текст, и символы на векторные (уберет генерацию шрифтов)
 
 \usepackage{cmap}
-\usepackage{graphicx}
 \usepackage{xspace}
-% \usepackage{psfrag} % ОТКЛЮЧЕНО: ломает сборку в pdflatex
-\usepackage{hyperref}
 \usepackage[normalem]{ulem}
 
+% graphicx и hyperref удалены из преамбулы, так как beamer загружает их сам автоматически.
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[frame number]
 \usecolortheme{seahorse}
 
-% Цвет для заголовков таблиц из вашей презентации
-\definecolor{tabgreen}{HTML}{92D050}
+% Цвет для заголовков таблиц (используем формат RGB, он самый надежный)
+\definecolor{tabgreen}{RGB}{146, 208, 80}
 
-%% Исправляем греческие буквы в формулах
-\DeclareSymbolFont{greek}{U}{eur}{m}{n}                                                        
-\SetSymbolFont{greek}{bold}{U}{eur}{b}{n}                                                      
-\DeclareSymbolFontAlphabet{\gr}{greek}  
-
-% ВНИМАНИЕ: Заменены коды с кавычками ("0B) на безопасные десятичные (11),
-% чтобы русский babel не ломал компиляцию при чтении спецсимвола кавычки!
-\DeclareMathSymbol{\alpha}{\mathord}{greek}{11}                                               
-\DeclareMathSymbol{\beta}{\mathord}{greek}{12}                                                
-\DeclareMathSymbol{\gamma}{\mathord}{greek}{13}                                               
-\DeclareMathSymbol{\delta}{\mathord}{greek}{14}                                               
-\DeclareMathSymbol{\epsilon}{\mathord}{greek}{15}                                             
-\DeclareMathSymbol{\zeta}{\mathord}{greek}{16}                                                
-\DeclareMathSymbol{\eta}{\mathord}{greek}{17}                                                 
-\DeclareMathSymbol{\theta}{\mathord}{greek}{18}                                               
-\DeclareMathSymbol{\iota}{\mathord}{greek}{19}                                                
-\DeclareMathSymbol{\kappa}{\mathord}{greek}{20}                                               
-\DeclareMathSymbol{\lambda}{\mathord}{greek}{21}                                              
-\DeclareMathSymbol{\mu}{\mathord}{greek}{22}                                                  
-\DeclareMathSymbol{\nu}{\mathord}{greek}{23}                                                  
-\DeclareMathSymbol{\xi}{\mathord}{greek}{24}                                                  
-\DeclareMathSymbol{\pi}{\mathord}{greek}{25}                                                  
-\DeclareMathSymbol{\rho}{\mathord}{greek}{26}                                                 
-\DeclareMathSymbol{\sigma}{\mathord}{greek}{27}                                               
-\DeclareMathSymbol{\tau}{\mathord}{greek}{28}                                                 
-\DeclareMathSymbol{\upsilon}{\mathord}{greek}{29}                                             
-\DeclareMathSymbol{\phi}{\mathord}{greek}{30}                                                 
-\DeclareMathSymbol{\chi}{\mathord}{greek}{31}                                                 
-\DeclareMathSymbol{\psi}{\mathord}{greek}{32}                                                 
-\DeclareMathSymbol{\omega}{\mathord}{greek}{33}                                               
-\DeclareMathSymbol{\varepsilon}{\mathord}{greek}{34}                                          
-\DeclareMathSymbol{\vartheta}{\mathord}{greek}{35}                                            
-\DeclareMathSymbol{\varpi}{\mathord}{greek}{36}                                               
-\let\varrho\rho                                                                                
-\let\varsigma\sigma                                                                            
-\DeclareMathSymbol{\varphi}{\mathord}{greek}{39}
+% ОГРОМНЫЙ БЛОК с греческими буквами УДАЛЕН.
+% Именно он вызывал критическую ошибку и падение (exit code 1). 
+% В презентации формул нет, поэтому он не нужен.
 
 % Настройка титульного листа
 \title{Создание интеллектуальных ассистентов для инженерных продуктов на примере узкоспециализированных предметных областей}
